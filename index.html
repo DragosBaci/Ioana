@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Ioana 💖</title>
+  <style>
+    :root {
+      --bg1: #ffd6e7;
+      --bg2: #ffeef5;
+      --pink: #ff5fa2;
+      --hotpink: #ff2d86;
+      --soft: #fff7fb;
+      --lav: #e8d9ff;
+      --text: #7a2954;
+      --white: #ffffff;
+      --shadow: 0 12px 30px rgba(255, 80, 140, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      font-family: "Trebuchet MS", "Comic Sans MS", system-ui, sans-serif;
+      overflow-x: hidden;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 20%, #fff5fb 0%, transparent 25%),
+        radial-gradient(circle at 80% 30%, #ffe3f1 0%, transparent 25%),
+        radial-gradient(circle at 50% 80%, #ffeef8 0%, transparent 30%),
+        linear-gradient(135deg, var(--bg1), var(--bg2), var(--lav));
+      background-size: 100% 100%;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle, rgba(255,255,255,0.55) 1px, transparent 1px);
+      background-size: 22px 22px;
+      opacity: 0.35;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .floating-hearts,
+    .sparkles {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .heart, .sparkle {
+      position: absolute;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      opacity: 0.9;
+    }
+
+    .heart {
+      font-size: 20px;
+      animation-name: floatUp;
+      filter: drop-shadow(0 4px 8px rgba(255, 45, 134, 0.18));
+    }
+
+    .sparkle {
+      width: 10px;
+      height: 10px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 12px white;
+      animation-name: twinkleMove;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(110vh) scale(0.7) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.95;
+      }
+      100% {
+        transform: translateY(-15vh) scale(1.2) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes twinkleMove {
+      0%, 100% {
+        transform: translateY(0) scale(0.6);
+        opacity: 0.2;
+      }
+      50% {
+        transform: translateY(-18px) scale(1.2);
+        opacity: 1;
+      }
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 18px 60px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 820px;
+      background: rgba(255, 255, 255, 0.74);
+      backdrop-filter: blur(10px);
+      border: 3px solid rgba(255,255,255,0.7);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+      padding: 28px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      animation: popIn 1s ease;
+    }
+
+    .card::before,
+    .card::after {
+      content: "💗";
+      position: absolute;
+      font-size: 50px;
+      opacity: 0.12;
+      animation: pulse 2.6s ease-in-out infinite;
+    }
+
+    .card::before {
+      top: 12px;
+      left: 18px;
+    }
+
+    .card::after {
+      bottom: 12px;
+      right: 18px;
+      animation-delay: 1s;
+    }
+
+    @keyframes popIn {
+      0% {
+        transform: translateY(28px) scale(0.96);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.18); }
+    }
+
+    .title {
+      font-size: clamp(2rem, 6vw, 4.6rem);
+      margin: 6px 0 8px;
+      line-height: 1;
+      color: var(--hotpink);
+      text-shadow: 0 4px 12px rgba(255, 45, 134, 0.2);
+      animation: wobble 3s ease-in-out infinite;
+    }
+
+    @keyframes wobble {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-1.5deg); }
+      75% { transform: rotate(1.5deg); }
+    }
+
+    .subtitle {
+      font-size: clamp(1rem, 2.6vw, 1.35rem);
+      margin: 0 0 20px;
+      color: #9a4b72;
+    }
+
+    .kitty {
+      font-size: clamp(4rem, 10vw, 6.5rem);
+      margin: 8px 0 10px;
+      animation: bounce 1.8s infinite;
+      display: inline-block;
+      filter: drop-shadow(0 10px 10px rgba(255, 95, 162, 0.18));
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-14px); }
+      60% { transform: translateY(-8px); }
+    }
+
+    .message-box {
+      background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,240,247,0.95));
+      border: 2px dashed #ff9fc7;
+      border-radius: 24px;
+      padding: 22px;
+      margin: 18px 0 22px;
+      box-shadow: inset 0 0 0 3px rgba(255,255,255,0.4);
+    }
+
+    .message {
+      font-size: clamp(1.06rem, 2.7vw, 1.35rem);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .message strong {
+      color: var(--hotpink);
+    }
+
+    .type-line {
+      min-height: 2em;
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      font-weight: 700;
+      color: #c12973;
+      margin: 10px 0 16px;
+    }
+
+    .btns {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    button {
+      border: none;
+      border-radius: 999px;
+      padding: 14px 24px;
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      box-shadow: 0 8px 20px rgba(255, 80, 140, 0.18);
+    }
+
+    .yes-btn {
+      background: linear-gradient(135deg, #ff74ae, #ff3a8d);
+      color: white;
+    }
+
+    .yes-btn:hover {
+      transform: translateY(-3px) scale(1.04);
+    }
+
+    .music-btn {
+      background: linear-gradient(135deg, #fff, #ffe2ef);
+      color: var(--text);
+    }
+
+    .music-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .forgive-msg {
+      margin-top: 20px;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--hotpink);
+      min-height: 2em;
+      animation: pulse 1.8s infinite;
+    }
+
+    .mini-hearts {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      font-size: 1.4rem;
+      margin-top: 12px;
+      animation: floatMini 1.8s ease-in-out infinite;
+    }
+
+    @keyframes floatMini {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .footer-note {
+      margin-top: 20px;
+      font-size: 0.95rem;
+      color: #a25c7e;
+    }
+
+    .sticker-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+    }
+
+    .sticker {
+      animation: stickerDance 2.4s ease-in-out infinite;
+      display: inline-block;
+    }
+
+    .sticker:nth-child(2) { animation-delay: 0.3s; }
+    .sticker:nth-child(3) { animation-delay: 0.6s; }
+    .sticker:nth-child(4) { animation-delay: 0.9s; }
+    .sticker:nth-child(5) { animation-delay: 1.2s; }
+
+    @keyframes stickerDance {
+      0%,100% { transform: translateY(0) rotate(0deg); }
+      30% { transform: translateY(-8px) rotate(-8deg); }
+      60% { transform: translateY(-3px) rotate(8deg); }
+    }
+
+    .corner-ribbon {
+      position: absolute;
+      top: 16px;
+      right: -36px;
+      background: linear-gradient(135deg, #ff98c1, #ff4f98);
+      color: white;
+      padding: 10px 46px;
+      transform: rotate(24deg);
+      font-size: 0.82rem;
+      font-weight: 900;
+      box-shadow: 0 8px 16px rgba(255, 79, 152, 0.25);
+    }
+
+    .hug {
+      margin-top: 18px;
+      font-size: 1rem;
+      color: #b14d7d;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 22px 16px;
+        border-radius: 24px;
+      }
+
+      .corner-ribbon {
+        font-size: 0.7rem;
+        padding: 8px 38px;
+        right: -42px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="floating-hearts" id="hearts"></div>
+  <div class="sparkles" id="sparkles"></div>
+
+  <main class="container">
+    <section class="card">
+      <div class="corner-ribbon">Made with love for Ioana 💕</div>
+
+      <div class="sticker-row">
+        <span class="sticker">🎀</span>
+        <span class="sticker">🧸</span>
+        <span class="sticker">🌸</span>
+        <span class="sticker">💖</span>
+        <span class="sticker">✨</span>
+      </div>
+
+      <div class="kitty">🥺💗</div>
+
+      <h1 class="title">Ioana, I’m Sorry</h1>
+      <p class="subtitle">A tiny pink website made just to say: please forgive me 💞</p>
+
+      <div class="type-line" id="typewriter"></div>
+
+      <div class="message-box">
+        <p class="message">
+          My sweetest <strong>Ioana</strong>,<br><br>
+          I know I hurt you, and I’m truly sorry.  
+          You mean so much to me, and I hate knowing that I made you feel anything less than loved, appreciated, and special.  
+          <br><br>
+          I can’t undo what happened, but I want you to know that my apology is real, my regret is real, and my feelings for you are very, very real.  
+          <br><br>
+          You are my favorite person, my prettiest girl, and the one I want to make smile again.  
+          <br><br>
+          Please let me try to make it right. 💕
+        </p>
+      </div>
+
+      <div class="btns">
+        <button class="yes-btn" id="forgiveBtn">Click here for a million kisses 💋</button>
+        <button class="music-btn" id="musicBtn">Play cute music vibe 🎵</button>
+      </div>
+
+      <div class="forgive-msg" id="forgiveMsg"></div>
+
+      <div class="mini-hearts">
+        <span>💗</span>
+        <span>💞</span>
+        <span>💕</span>
+        <span>💘</span>
+      </div>
+
+      <p class="hug">Sending the biggest apology hug ever 🫂</p>
+      <p class="footer-note">P.S. You are still the prettiest girl in the universe.</p>
+    </section>
+  </main>
+
+  <script>
+    const typewriterText = [
+      "You are my favorite person 💖",
+      "I miss your smile already 🌸",
+      "I promise this apology comes with real love 🧸",
+      "Ioana, you are so deeply loved 💕"
+    ];
+
+    const typewriter = document.getElementById("typewriter");
+    let lineIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function typeLoop() {
+      const current = typewriterText[lineIndex];
+
+      if (!deleting) {
+        typewriter.textContent = current.slice(0, charIndex++);
+        if (charIndex > current.length) {
+          deleting = true;
+          setTimeout(typeLoop, 1200);
+          return;
+        }
+      } else {
+        typewriter.textContent = current.slice(0, charIndex--);
+        if (charIndex < 0) {
+          deleting = false;
+          lineIndex = (lineIndex + 1) % typewriterText.length;
+        }
+      }
+
+      setTimeout(typeLoop, deleting ? 40 : 75);
+    }
+
+    typeLoop();
+
+    const heartsContainer = document.getElementById("hearts");
+    const heartEmojis = ["💖", "💕", "💗", "💘", "💞", "🌸", "✨"];
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.textContent = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (5 + Math.random() * 6) + "s";
+      heart.style.fontSize = (16 + Math.random() * 24) + "px";
+      heart.style.opacity = 0.5 + Math.random() * 0.5;
+      heartsContainer.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 11000);
+    }
+
+    setInterval(createHeart, 260);
+
+    const sparklesContainer = document.getElementById("sparkles");
+    function createSparkle() {
+      const sparkle = document.createElement("div");
+      sparkle.className = "sparkle";
+      sparkle.style.left = Math.random() * 100 + "vw";
+      sparkle.style.top = Math.random() * 100 + "vh";
+      sparkle.style.animationDuration = (1.5 + Math.random() * 2.5) + "s";
+      sparkle.style.width = sparkle.style.height = (5 + Math.random() * 8) + "px";
+      sparklesContainer.appendChild(sparkle);
+
+      setTimeout(() => sparkle.remove(), 4500);
+    }
+
+    setInterval(createSparkle, 180);
+
+    const forgiveBtn = document.getElementById("forgiveBtn");
+    const forgiveMsg = document.getElementById("forgiveMsg");
+
+    forgiveBtn.addEventListener("click", () => {
+      forgiveMsg.innerHTML = "MWAH MWAH MWAH 💋💋💋<br>Infinite kisses for Ioana activated 💞";
+
+      for (let i = 0; i < 25; i++) {
+        setTimeout(createHeart, i * 80);
+      }
+    });
+
+    // Tiny beep-based melody so there's a "cute music vibe" without any external files
+    const musicBtn = document.getElementById("musicBtn");
+    let audioCtx;
+
+    function playTone(freq, start, duration) {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+
+      osc.type = "sine";
+      osc.frequency.value = freq;
+
+      gain.gain.setValueAtTime(0.0001, start);
+      gain.gain.exponentialRampToValueAtTime(0.08, start + 0.03);
+      gain.gain.exponentialRampToValueAtTime(0.0001, start + duration);
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      osc.start(start);
+      osc.stop(start + duration + 0.02);
+    }
+
+    musicBtn.addEventListener("click", async () => {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+
+      const now = audioCtx.currentTime + 0.05;
+      const notes = [
+        523.25, 659.25, 783.99, 659.25,
+        698.46, 880.00, 1046.5, 880.00,
+        783.99, 659.25, 698.46, 523.25
+      ];
+
+      notes.forEach((n, i) => {
+        playTone(n, now + i * 0.18, 0.16);
+      });
+
+      musicBtn.textContent = "Cute music is playing ✨";
+      setTimeout(() => {
+        musicBtn.textContent = "Play cute music vibe 🎵";
+      }, 2500);
+    });
+  </script>
+</body>
+</html>
